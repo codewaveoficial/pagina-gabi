@@ -1,0 +1,147 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f7f7f7, #e3f2fd);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 25px;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 4px #007bff;
+}
+
+.profile h1 {
+  margin-top: 10px;
+  font-size: 1.6rem;
+  color: #0056b3;
+}
+
+/* Container de links */
+.links {
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Links com cor única e borda elegante */
+.link {
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 2px solid #fdf2f8; /* borda sutil combinando com o fundo */
+  background-color: #fdf2f8; /* cor única */
+  transition: transform 0.25s, box-shadow 0.25s, filter 0.25s, background 0.3s, border-color 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-fill-mode: forwards;
+}
+
+/* Delay progressivo para cada link */
+.link:nth-child(1) { animation-delay: 0.2s; }
+.link:nth-child(2) { animation-delay: 0.4s; }
+.link:nth-child(3) { animation-delay: 0.6s; }
+.link:nth-child(4) { animation-delay: 0.8s; }
+
+/* Hover moderno com gradiente e sombra */
+.link:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  background: linear-gradient(90deg, #ffe4e6, #fce4f0);
+  border-color: #ffb6c1;
+  filter: brightness(1.05);
+}
+
+/* Conteúdo interno do link */
+.link-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.link img.mini-foto,
+.link img.icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.link span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+  .profile img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile h1 {
+    font-size: 1.4rem;
+  }
+
+  .link img.mini-foto,
+  .link img.icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .link span {
+    font-size: 0.95rem;
+  }
+}
